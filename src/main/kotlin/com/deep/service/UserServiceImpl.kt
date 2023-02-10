@@ -1,8 +1,9 @@
 package com.deep.service
 
-import com.deep.dp.DatabaseFactory.dbQuery
-import com.deep.dp.UserTable
+import com.deep.db.DatabaseFactory.dbQuery
+import com.deep.db.UserTable
 import com.deep.model.User
+import com.deep.security.hash
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
@@ -14,7 +15,7 @@ class UserServiceImpl : UserService {
         dbQuery {
             statement = UserTable.insert {
                 it[email] = params.email
-                it[password] = params.password //@TODO, we need to encrypt the password
+                it[password] = hash(params.password)
                 it[fullName] = params.fullName
                 it[avatar] = params.avatar
             }

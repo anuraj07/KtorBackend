@@ -1,6 +1,6 @@
 package com.deep
 
-import com.deep.dp.DatabaseFactory
+import com.deep.db.DatabaseFactory
 import com.deep.repository.UserRepository
 import com.deep.repository.UserRepositoryImpl
 import com.deep.routes.authRoutes

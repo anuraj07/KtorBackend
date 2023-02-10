@@ -1,4 +1,4 @@
-package com.deep.dp
+package com.deep.db
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource

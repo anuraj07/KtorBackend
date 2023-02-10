@@ -1,4 +1,4 @@
-package com.deep.dp
+package com.deep.db
 
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.javatime.datetime
