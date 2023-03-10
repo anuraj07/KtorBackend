@@ -4,6 +4,7 @@ import com.deep.db.DatabaseFactory
 import com.deep.repository.UserRepository
 import com.deep.repository.UserRepositoryImpl
 import com.deep.routes.authRoutes
+import com.deep.security.configureSecurity
 import com.deep.service.UserService
 import com.deep.service.UserServiceImpl
 import io.ktor.server.application.*
@@ -19,6 +20,7 @@ fun main() {
         install(ContentNegotiation) {
             jackson()
         }
+        configureSecurity()
 
         val service: UserService = UserServiceImpl()
         val repository: UserRepository = UserRepositoryImpl(service)
